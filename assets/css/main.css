@@ -1,0 +1,345 @@
+
+/*
+
+Aniflame
+
+*/
+
+/* 
+---------------------------------------------
+reset
+--------------------------------------------- 
+*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  }
+  
+  .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  
+  .clearfix {
+    display: inline-block;
+  }
+  
+  html[xmlns] .clearfix {
+    display: block;
+  }
+  
+  * html .clearfix {
+    height: 1%;
+  }
+  
+  ul, li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  header, nav, section, article, aside, footer, hgroup {
+    display: block;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-weight: 400;
+    background-color: var(--background);
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+      color: #fff;
+    text-decoration: none !important;
+  }
+  a:hover {
+      color: #F99;
+  }
+  
+  h1, h2, h4, h5, h6 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  h3{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 700;
+  }
+  ul {
+    margin-bottom: 0px;
+  }
+  
+  p {
+    font-size: 25px;
+    line-height: 30px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  img {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* 
+  ---------------------------------------------
+  Global Styles
+  --------------------------------------------- 
+  */
+  /*
+  ---------------------------------------------
+  Color Scheme Variables
+  --------------------------------------------- 
+  */
+  :root {
+      --background: #0b0f18;
+      --text-color: #e0e4f1;
+      --primary: #88a0e7;
+      --secondary: #141b2e;
+      --accent: #576fb7;
+  }
+  html,body {
+    font-family: 'Lexend', sans-serif;
+    color: var(--text-color);
+    background: var(--background);
+  }
+  
+  body .page-content {
+    margin-top: 110px;
+    background-color: var(--secondary);
+    padding: 60px;
+    border-radius: 23px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  
+  .page-only-top {
+      margin-top: 110px;
+  }
+  
+  p {
+    font-size: 15px;
+    color: var(--text-color);
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  
+  ::selection {
+    background: var(--primary);
+    color: var(--text-color);
+  }
+  
+  ::-moz-selection {
+    background: var(--primary);
+    color: var(--text-color);
+  }
+  
+  .main-button a {
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: var(--primary);
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .main-button a:hover {
+    background-color: var(--text-color);
+    color: var(--primary);
+  }
+  
+  .main-border-button a {
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--accent);
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .main-border-button a:hover {
+    border-color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--accent);
+  }
+  
+  .border-no-active a {
+    border-color: var(--accent);
+    color: var(--text-color);
+  }
+  
+  .border-no-active a:hover{
+    border-color: var(--text-color);
+    color: var(--accent);
+    background-color: transparent;
+  }
+  
+  section {
+    margin-top: 120px;
+  }
+  
+  .heading-section h4 {
+    color: var(--text-color);
+    font-size: 34px;
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+  
+  .heading-section h6{
+    color: var(--accent)
+  }
+  .heading-section h4 em {
+    color: var(--accent);
+    font-style: normal;
+    text-decoration: underline;
+  }
+  
+
+  .main-text {
+    color: var(--text-color);
+    filter: drop-shadow(0 -0.4rem 0.75rem var(--accent));
+    }
+  /* 
+  ---------------------------------------------
+  Banner Style
+  --------------------------------------------- 
+  */
+  
+  .main-banner {
+    background-image: url(/assets/images/banner.jpg);
+    opacity: 0.75;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    min-height: 380px;
+    border-radius: 23px;
+    padding: 80px 60px;
+    z-index: 1;
+  }
+  .main-banner h6 {
+    font-size: 20px;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+  
+  .main-banner h4 {
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  
+  .main-banner h4 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .main-banner::before {
+    content: "";
+    position: absolute;
+    border-radius: 23px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+      77deg,
+      rgba(0, 0, 0, 0.7) 25%,
+      transparent 90%
+    );
+    z-index: 0;
+    }
+  
+  /* 
+  ---------------------------------------------
+  Footer Style
+  --------------------------------------------- 
+  */
+  
+  .footer-nav {
+    margin-top: 1.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    padding: 5px 1.5rem
+  }
+  
+  .nav-item a:hover{
+      color: var(--accent);
+  
+  }
+  
+  .nav-link {
+    transition: all 0.2s;
+    font-size: 16px;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: var(--accent);
+  }
+  footer p {
+    text-align: center;
+    padding: 30px 0px;
+    color: #fff;
+    font-weight: 300;
+  }
+  
+  footer p a {
+    color: var(--text-color);
+    transition: all .3s;
+  }
+  
+  footer p a:hover {
+    color: var(--accent);
+  }
+  
+  .foss-software {
+      max-width: 100px;
+      padding-top: 10px;
+      align-self: center;
+  }
+  /* 
+  ---------------------------------------------
+  Responsive Style
+  --------------------------------------------- 
+  */
+  
+  body {
+    overflow-x: hidden;
+    font-family: 'Lexend', sans-serif;
+  }

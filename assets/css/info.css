@@ -1,0 +1,175 @@
+ .info-container {
+    margin-top: 8rem;
+    margin-left: 7rem;
+    display: grid;
+    grid-template-columns: minmax(15rem, auto) 1fr;
+    grid-gap: 16px;
+    align-items: flex-start;
+    position: relative;
+}
+
+
+
+
+.thumbnail {
+    width: 20rem;
+    height: 29.6rem;
+    overflow: hidden;
+    margin-right: 2em;
+    border-radius: 0.5rem;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover ;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+.english {
+    font-size: 1.875rem;
+    line-height: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.romaji {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 0.2rem;
+}
+.native {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-top: 0.1rem;
+}
+
+.button-container {
+    margin-top: 4rem;
+}
+
+.watch-now-button {
+    padding: 0.5rem 1rem;
+    width: 15rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    color: var(--text-color);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+.watch-now-button:hover {
+    background-color: var(--text-color);
+    color: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.genre-season {
+    display: flex;
+    align-items: center;
+}
+
+.genres {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.genre {
+    background-color: var(--secondary);
+    color: var(--text-color);
+    padding: 0.1rem 0.23rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.season-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin-left: 0.6rem;
+    margin-top: 0.4rem;
+}
+
+.year {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.season {
+    margin-right: 0.5rem;
+}
+
+.rating-container {
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.rating-icon {
+    display: flex;
+    margin-right: 0.4rem;
+}
+
+.average-rating {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+.average-popularity {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+.popularity-container {
+    margin-top: 0.4rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.test {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 70rem;
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.showMoreLess {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+
+.separator-container {
+    padding: 0 1rem; /* Adjust the padding as desired */
+}
+
+.separator {
+    border-top: 2px solid var(--accent);
+    border-radius: 1.5rem;
+    margin-top: 5rem;
+}

@@ -1,0 +1,23 @@
+.schedule-img {
+    width: 6rem;
+    height: 9rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.schedule-tabs {
+    background-color: transparent;
+    color: var(--accent);
+    margin-left: 0.8rem;
+    margin-bottom: 3rem;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.schedule-tabs.active-tab {
+    color: var(--primary);
+  }
+
+  .schedule-container {
+    margin-top: 8rem;
+    margin-left: 7rem;
+  }

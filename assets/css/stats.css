@@ -1,0 +1,30 @@
+.stats-container {
+  margin-top: 8rem;
+  margin-left: 7rem;
+  display: flex;
+  grid-gap: 1rem;
+  position: relative;
+  justify-content: center; 
+  align-items: center; 
+}
+.stats-card {
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.stats-title {
+  font-size: 1.5rem;
+}
+
+.stats-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stats-h1 {
+  margin-top: 8rem;
+  text-align:center;
+  color: var(--primary);
+}

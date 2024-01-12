@@ -1,0 +1,56 @@
+/* 
+---------------------------------------------
+DMCA Style
+--------------------------------------------- 
+*/
+
+.dmca-content a:hover {
+	color: var(--accent)
+}
+
+
+.dmca-content ul {
+	color: var(--text-color);
+}
+
+.dmca-content li {
+	list-style: disc inside;
+	color: var(--text-color);
+}
+
+
+/* 
+---------------------------------------------
+Privacy Style
+--------------------------------------------- 
+*/
+
+.privacy-content ul {
+	color: var(--text-color);
+}
+
+.privacy-content li {
+	list-style: disc inside;
+}
+
+.privacy-content a:hover {
+	color: var(--accent);
+}
+
+/* 
+---------------------------------------------
+Terms Style
+--------------------------------------------- 
+*/
+
+.terms-content ul {
+	color: var(--text-color)
+}
+
+.terms-content li {
+	list-style: disc inside;
+}
+
+.terms-content a:hover {
+	color: var(--accent);
+}
