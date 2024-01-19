@@ -10,7 +10,7 @@ interface ServerOutline {
 const { data: servers, pending } = useAsyncData(async () => {
   const responses = await Promise.allSettled([
   { url: "https://api.anify.tv", altName: "API", status: "loading..." },
-  { url: "https://proxy.anistreme.live/proxy/m3u8/", altName: "M3U8", status: "loading..." },
+  { url: "https://m3u8.pyth0n.software/", altName: "M3U8", status: "loading..." },
   { url: "http://localhost:3000", altName: "Website", status: "loading..." },
   { url: 'https://hanime-api-five.vercel.app', altName: 'Hanime API', status: "loading..."},
   { url: "https://scrape.streamsora.live", altName: "Scraper", status: "loading..." },
