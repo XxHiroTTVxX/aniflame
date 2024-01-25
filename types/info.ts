@@ -1,11 +1,3 @@
-// To parse this data:
-//
-//   import { Convert, Info } from "./file";
-//
-//   const info = Convert.toInfo(json);
-//
-// These functions will throw an error if the JSON doesn't
-// match the expected interface, even if the JSON is valid.
 
 export type Info = {
     id:                string;

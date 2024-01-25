@@ -2,6 +2,9 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -18,7 +21,16 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-countdown": "2",
+    "@langchain/google-genai": "^0.0.7",
+    "@langchain/mistralai": "^0.0.6",
+    "dotenv": "^16.4.1",
     "hls.js": "^1.4.14",
+    "langchain": "^0.1.6",
     "vidstack": "^1.9.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "@langchain/core": "0.1.5"
+    }
   }
 }

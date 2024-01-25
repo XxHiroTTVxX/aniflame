@@ -1,13 +1,13 @@
 <template>
   <div class="player">
-    <media-player title="Pokemon" src="https://anify.anistreme.live/video/YrPhp%252BdQooA0%252B4IP6o4sRp7siYUb9pF3R1MFzIBdmL08aN9X9pSsmK3e62lHCczmZX26qEEZuq1qJDMvJZI9mtxD17jCJjn0u%252FU%252BGeNlMTy6awoqUB4QhmzfXoZOa5HU8lnP3MItIeh0fYNlHoTYhnabrwnzw8HR11UiobqAAVY%253D/%7B%7D/.m3u8">
+    <media-player title="Pokemon" src="data.sources.url">
   <media-provider></media-provider>
   <media-video-layout></media-video-layout>
 </media-player>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import 'vidstack/player/styles/default/theme.css';
 import 'vidstack/player/styles/default/layouts/video.css';
 import 'vidstack/player';
@@ -15,9 +15,12 @@ import 'vidstack/player/layouts';
 import 'vidstack/player/ui';
 
 
+const route = useRoute();
+
+const { data } = await useFetch(`/api/sources/${route.params.providerId}/${route.params.watchId}/${route.params.episode}/${route.params.id}/${route.params.subDub}`);
 </script>
 
-<style scoped>
+<style>
 media-player {
     aspect-ratio: 16/9;
 }
