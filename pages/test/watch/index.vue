@@ -1,6 +1,6 @@
 <template>
   <div class="player">
-    <media-player title="Pokemon" src="https://anify.anistreme.live/video/YrPhp%252BdQooA0%252B4IP6o4sRp7siYUb9pF3R1MFzIBdmL08aN9X9pSsmK3e62lHCczmZX26qEEZuq1qJDMvJZI9mtxD17jCJjn0u%252FU%252BGeNlMTy6awoqUB4QhmzfXoZOa5HU8lnP3MItIeh0fYNlHoTYhnabrwnzw8HR11UiobqAAVY%253D/%7B%7D/.m3u8">
+    <media-player title="Pokemon" src="https://m3u8.pyth0n.software/video/OJoKGgkKU39xx5DuuNOmuE85CezDjzIq7MEtFz%252BHhMH8XS7JWGIFY7Vvg9VVHmhezu7uMfmRwkRMf%252BNdECKdSwzNRPgrgwQa3v6izjznLe2VY996M70HFOyBhgnjKDQUS5SwQJV8QPfsRJoZiAkJTw%253D%253D/%7B%7D/.m3u8">
   <media-provider></media-provider>
   <media-video-layout></media-video-layout>
 </media-player>
