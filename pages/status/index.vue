@@ -12,9 +12,6 @@ const { data: servers, pending } = useAsyncData(async () => {
   { url: "https://api.anify.tv", altName: "API", status: "loading..." },
   { url: "https://m3u8.pyth0n.software/", altName: "M3U8", status: "loading..." },
   { url: "http://localhost:3000", altName: "Website", status: "loading..." },
-  { url: 'https://hanime-api-five.vercel.app', altName: 'Hanime API', status: "loading..."},
-  { url: "https://scrape.streamsora.live", altName: "Scraper", status: "loading..." },
-  { url: "https://anilist.co", altName: "Anilist", status: "loading..." },
   ].map(async (server) => {
     try {
       const response = await axios.get(server.url)

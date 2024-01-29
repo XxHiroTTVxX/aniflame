@@ -1,75 +1,41 @@
-# Nuxt 3 Minimal Starter
+# Aniflame 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Description
+Aniflame is a anime streaming site made with nuxt3 and typescript so that you can stream anime 
 
-## Setup
+## Features
+TODO
 
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Installation
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm i
 ```
 
-## Production
-
-Build the application for production:
+## Usage
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm dev
 ```
 
-Locally preview production build:
+## Contributing
 
-```bash
-# npm
-npm run preview
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-# pnpm
-pnpm run preview
+## License
 
-# yarn
-yarn preview
+TODO
 
-# bun
-bun run preview
-```
+## Contact
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+TODO
+
+## Acknowledgments
+
+TODO
+
+## Support
+
+TODO
+
+
