@@ -173,3 +173,14 @@
     border-radius: 1.5rem;
     margin-top: 5rem;
 }
+
+.provider-selector select {
+    background-color: var(--secondary);
+    color: var(--text-color);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    cursor: pointer;
+}
+

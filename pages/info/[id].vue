@@ -1,5 +1,5 @@
 <template>
-    <div v-if="pending"><InfoSkeleton /> </div>
+  <div v-if="pending"><InfoSkeleton /></div>
   <div class="info-container" v-else-if="data">
     <div class="thumbnail">
       <img v-if="poster.length > 0" :src="poster[0].img" alt="Error" />
@@ -20,16 +20,6 @@
           <a>
             <button class="watch-now-button">Watch Now</button>
           </a>
-        </div>
-        <div>
-          <select
-            bind:value="{selectedProviderId}"
-            on:change="{onProviderChange}"
-          >
-            {#each data.episodes.map(e => e.providerId) as providerId}
-            <option value="{providerId}">{providerId}</option>
-            {/each}
-          </select>
         </div>
         <div class="genre-season">
           <div class="genres">
@@ -93,38 +83,57 @@
           >{{ showDesc ? "Show less" : "Show more" }}</span
         >
       </div>
-    </div>
-        </div>
-        <div class="separator-container">
-	<hr class="separator" />
-</div>
 
+      <div class="separator-container">
+        <hr class="separator" />
+        <div class="provider-selector">
+          <select bind:value="{selectedProviderId}">
+            <option
+              v-for="provider in data.mappings.filter(
+                (m) => m.providerType === 'ANIME'
+              )"
+            >
+              {{ provider.providerId }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ArtworkType, ProviderID, type Episode, type Info } from "~/types/info";
+import { ArtworkType, ProviderID, type Info } from "~/types/info";
 import "~/assets/css/info.css";
 
 const showDesc = ref(false);
 
 const route = useRoute();
 
-const { pending, data } = await useLazyFetch<Info>(`/api/info/${route.params.id}`, {
-    server: false
-})
+const { pending, data } = await useLazyFetch<Info>(
+  `/api/info/${route.params.id}`,
+  {
+    server: false,
+  }
+);
 
 const priorityList: ProviderID[] = [
-    ProviderID.Tvdb,
-    ProviderID.Anilist,
-    ProviderID.Kitsu,
+  ProviderID.Tvdb,
+  ProviderID.Anilist,
+  ProviderID.Kitsu,
 ];
 const poster = computed(() => {
-  if(!data.value) return []
-  let posters = data.value?.artwork?.filter((x: { type: ArtworkType }) => x.type === ArtworkType.Poster) ?? [];
+  if (!data.value) return [];
+  let posters =
+    data.value?.artwork?.filter(
+      (x: { type: ArtworkType }) => x.type === ArtworkType.Poster
+    ) ?? [];
   posters.sort(
-    (a: { providerId: ProviderID; }, b: { providerId: ProviderID; }) =>
-        priorityList.indexOf(a.providerId) - priorityList.indexOf(b.providerId)
+    (a: { providerId: ProviderID }, b: { providerId: ProviderID }) =>
+      priorityList.indexOf(a.providerId) - priorityList.indexOf(b.providerId)
   );
   return posters;
 });
+
+
 </script>
