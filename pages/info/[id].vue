@@ -87,14 +87,8 @@
       <div class="separator-container">
         <hr class="separator" />
         <div class="provider-selector">
-          <select bind:value="{selectedProviderId}">
-            <option
-              v-for="provider in data.mappings.filter(
-                (m) => m.providerType === 'ANIME'
-              )"
-            >
-              {{ provider.providerId }}
-            </option>
+          <select>
+            
           </select>
         </div>
       </div>

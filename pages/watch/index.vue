@@ -59,7 +59,7 @@ function sortSourcesByQuality(sources: { url: string, quality: string }[]) {
   });
 }
 
-console.log(data)
+console.log(sortedSources.value)
 
 </script>
 
