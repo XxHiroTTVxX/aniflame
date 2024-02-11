@@ -131,10 +131,12 @@ const episodeThumbnail = computed(() => {
       const episodeNumber = 1;
 
       // Find the episode metadata
-      const episodeMetadata = thumbnails?.find((item: { number: number }) => item.number === episodeNumber);
+      const episodeMetadata = thumbnails?.meta.find((item: { number: number }) => item.number === episodeNumber);
 
       return episodeMetadata;
     });
+
+    episodeThumbnail.value
 
 const priorityList: ProviderID[] = [
   ProviderID.Tvdb,
