@@ -119,7 +119,7 @@ const { pending, data } = await useLazyFetch<Info>(
     server: false,
   }
 );
-
+// Issues with this 
 const meta = await (await fetch("https://api.anify.tv/content-metadata/21")).json();
 const tvdb = meta.filter((item: { providerId: string; }) => item.providerId === "tvdb")[0];
 const episodeNumber = 1;
