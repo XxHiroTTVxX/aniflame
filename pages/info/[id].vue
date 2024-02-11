@@ -107,6 +107,8 @@
 
 <script setup lang="ts">
 import { ArtworkType, ProviderID, type Info } from "~/types/info";
+import type { Metadata } from "~/types/metadata";
+
 import "~/assets/css/info.css";
 
 const showDesc = ref(false);
@@ -119,12 +121,20 @@ const { pending, data } = await useLazyFetch<Info>(
     server: false,
   }
 );
-// Issues with this 
-const meta = await (await fetch("https://api.anify.tv/content-metadata/21")).json();
-const tvdb = meta.filter((item: { providerId: string; }) => item.providerId === "tvdb")[0];
-const episodeNumber = 1;
-const episodeMetadata = tvdb?.find((item: { number: number; }) => item.number === episodeNumber)[0];
-console.log(episodeMetadata?.img);
+
+const { data: meta } = await useFetch<Metadata>(`/api/metadata/${route.params.id}`,);
+// Issues with this \
+const episodeThumbnail = computed(() => {
+      if (!meta.value) return [];
+
+      const thumbnails = meta.value.filter((item: { providerId: string }) => item.providerId === "tvdb")[0];
+      const episodeNumber = 1;
+
+      // Find the episode metadata
+      const episodeMetadata = thumbnails?.find((item: { number: number }) => item.number === episodeNumber);
+
+      return episodeMetadata;
+    });
 
 const priorityList: ProviderID[] = [
   ProviderID.Tvdb,
@@ -133,7 +143,7 @@ const priorityList: ProviderID[] = [
 ];
 const poster = computed(() => {
   if (!data.value) return [];
-  let posters =
+  const posters =
     data.value?.artwork?.filter(
       (x: { type: ArtworkType }) => x.type === ArtworkType.Poster
     ) ?? [];
