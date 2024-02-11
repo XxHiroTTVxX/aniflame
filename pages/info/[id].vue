@@ -87,13 +87,22 @@
       <div class="separator-container">
         <hr class="separator" />
         <div class="provider-selector">
-          <select>
-            
-          </select>
+          <select></select>
+        </div>
+      </div>
+      <div class="ep-container">
+        <img class="ep-thumbnail" src="/assets/images/1.png" />
+        <div class="episode-text">
+          <div class="episode-num">EP 6</div>
+        </div>
+        <div class="episode-details">
+          <div class="episode-title">Episode 6</div>
+          <div class="ellipse">●</div>
+          <div class="gogoanime">GOGOANIME</div>
+        </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -110,6 +119,12 @@ const { pending, data } = await useLazyFetch<Info>(
     server: false,
   }
 );
+
+const meta = await (await fetch("https://api.anify.tv/content-metadata/21")).json();
+const tvdb = meta.filter((item: { providerId: string; }) => item.providerId === "tvdb")[0];
+const episodeNumber = 1;
+const episodeMetadata = tvdb?.find((item: { number: number; }) => item.number === episodeNumber)[0];
+console.log(episodeMetadata?.img);
 
 const priorityList: ProviderID[] = [
   ProviderID.Tvdb,
@@ -128,6 +143,63 @@ const poster = computed(() => {
   );
   return posters;
 });
-
-
 </script>
+
+<style scoped>
+.ep-container {
+  background-color: var(--secondary);
+  font-family: "Poppins", sans-serif;
+  width: 200px;
+  height: 185px;
+  border-radius: 0.5rem;
+}
+.ep-thumbnail {
+  width: 11.25rem;
+  height: 7.3125rem;
+  margin-left: 0.6rem;
+  object-fit: cover;
+  margin-top: 0.4rem;
+  border-radius: 10px;
+}
+
+.episode-text {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  margin-left: 0.6rem;
+}
+
+.episode-details {
+  color: var(--secondary-text-color);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3rem;
+  margin-left: 0.6rem;
+  gap: 0.6rem;
+}
+
+.episode-num {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.episode-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.ellipse {
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  height: 8.19px;
+}
+.gogoanime {
+  font-size: 0.8rem;
+  width: 47.57px;
+  font-weight: 500;
+  position: relative;
+  height: 8.19px;
+  color: var(--text);
+}
+</style>

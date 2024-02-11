@@ -110,6 +110,7 @@ reset
   :root {
       --background: #0b0f18;
       --text-color: #e0e4f1;
+      --secondary-text-color: #e0e4f1ad;
       --primary: #88a0e7;
       --secondary: #141b2e;
       --accent: #576fb7;
