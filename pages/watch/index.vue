@@ -22,7 +22,7 @@ const { pending, data: fetchedData } = await useFetch<Sources>(`/api/sources/`, 
   query: {
     providerId: route.query.providerId,
     watchId: route.query.watchId,
-    episodeNumber: route.query.episodeNumber,
+    num: route.query.episodeNumber,
     id: route.query.id,
     subType: route.query.subType,
   },

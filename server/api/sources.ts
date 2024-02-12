@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
-  const { providerId, watchId, episodeNumber: episode, id, subType } = getQuery(event);
-  const url = `https://api.anify.tv/sources?providerId=${providerId}&watchId=${watchId}&episodeNumber=${episode}&id=${id}&subType=${subType}`
+  const { providerId, watchId, num: episode, id, subType } = getQuery(event);
+  const url = `https://api.anify.tv/sources?providerId=${providerId}&watchId=${watchId}&num=${episode}&id=${id}&subType=${subType}`
 
   const response = await fetch(url);
 
